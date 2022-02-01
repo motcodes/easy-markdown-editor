@@ -15,9 +15,8 @@
 .EasyMDEContainer .CodeMirror {
     box-sizing: border-box;
     height: auto;
-    border: 1px solid #ddd;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border: 1px solid #828282;
+    border-radius: 4px;
     padding: 10px;
     font: inherit;
     z-index: 0;
@@ -53,7 +52,7 @@
 }
 
 .EasyMDEContainer .CodeMirror-placeholder {
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .EasyMDEContainer .CodeMirror-focused .CodeMirror-selected {
@@ -68,11 +67,11 @@
     -o-user-select: none;
     user-select: none;
     padding: 9px 10px;
-    border-top: 1px solid #bbb;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    margin: 2px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 22px;
 }
 
 .editor-toolbar.fullscreen {
@@ -93,12 +92,38 @@
 .editor-toolbar.fullscreen::before {
     width: 20px;
     height: 50px;
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0%, rgba(255, 255, 255, 1)),
+        color-stop(100%, rgba(255, 255, 255, 0))
+    );
+    background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -o-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -ms-linear-gradient(
+        left,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
     position: fixed;
     top: 0;
     left: 0;
@@ -109,12 +134,38 @@
 .editor-toolbar.fullscreen::after {
     width: 20px;
     height: 50px;
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -moz-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0%, rgba(255, 255, 255, 0)),
+        color-stop(100%, rgba(255, 255, 255, 1))
+    );
+    background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: -o-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: -ms-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
     position: fixed;
     top: 0;
     right: 0;
@@ -126,7 +177,8 @@
     width: 100%;
 }
 
-.editor-toolbar button, .editor-toolbar .easymde-dropdown {
+.editor-toolbar button,
+.editor-toolbar .easymde-dropdown {
     background: transparent;
     display: inline-block;
     text-align: center;
@@ -141,12 +193,14 @@
 
 .editor-toolbar button {
     width: 30px;
+    color: #828282;
 }
 
 .editor-toolbar button.active,
 .editor-toolbar button:hover {
     background: #fcfcfc;
     border-color: #95a5a6;
+    color: #4f4f4f;
 }
 
 .editor-toolbar i.separator {
@@ -188,7 +242,7 @@
 }
 
 .editor-toolbar.disabled-for-preview button:not(.no-disable) {
-    opacity: .6;
+    opacity: 0.6;
     pointer-events: none;
 }
 
@@ -216,15 +270,15 @@
 }
 
 .editor-statusbar .lines:before {
-    content: 'lines: '
+    content: "lines: ";
 }
 
 .editor-statusbar .words:before {
-    content: 'words: '
+    content: "words: ";
 }
 
 .editor-statusbar .characters:before {
-    content: 'characters: '
+    content: "characters: ";
 }
 
 .editor-preview-full {
@@ -254,7 +308,7 @@
 }
 
 .editor-preview-active-side {
-    display: block
+    display: block;
 }
 
 .EasyMDEContainer.sided--no-fullscreen .editor-preview-active-side {
@@ -264,7 +318,7 @@
 }
 
 .editor-preview-active {
-    display: block
+    display: block;
 }
 
 .editor-preview {
@@ -273,12 +327,22 @@
 }
 
 .editor-preview > p {
-    margin-top: 0
+    margin-top: 0;
+}
+.editor-preview > p > img {
+    width: 60%;
+    height: auto;
+}
+.editor-preview > ul,
+.editor-preview > ol {
+    padding-inline-start: 16px;
 }
 
 .editor-preview pre {
     background: #eee;
     margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .editor-preview table td,
@@ -320,7 +384,7 @@
 }
 
 .cm-s-easymde .cm-comment {
-    background: rgba(0, 0, 0, .05);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 2px;
 }
 
@@ -339,13 +403,25 @@
 
 .editor-toolbar .easymde-dropdown {
     position: relative;
-    background: linear-gradient(to bottom right, #fff 0%, #fff 84%, #333 50%, #333 100%);
+    background: linear-gradient(
+        to bottom right,
+        #fff 0%,
+        #fff 84%,
+        #333 50%,
+        #333 100%
+    );
     border-radius: 0;
     border: 1px solid #fff;
 }
 
 .editor-toolbar .easymde-dropdown:hover {
-    background: linear-gradient(to bottom right, #fff 0%, #fff 84%, #333 50%, #333 100%);
+    background: linear-gradient(
+        to bottom right,
+        #fff 0%,
+        #fff 84%,
+        #333 50%,
+        #333 100%
+    );
 }
 
 .easymde-dropdown-content {
@@ -366,7 +442,7 @@
 }
 
 span[data-img-src]::after {
-    content: '';
+    content: "";
     /*noinspection CssUnresolvedCustomProperty, added through JS*/
     background-image: var(--bg-image);
     display: block;

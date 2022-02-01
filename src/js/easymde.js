@@ -1687,6 +1687,14 @@ var toolbarBuiltInButtons = {
         title: "Insert Image",
         default: true,
     },
+    // "upload-image": {
+    //     name: "upload image",
+    //     action: drawUploadedImage,
+    //     className: "imageInput",
+    //     dataFeather: "upload",
+    //     title: "Upload Image",
+    //     default: true,
+    // },
     "unordered-list": {
         name: "unordered-list",
         action: toggleUnorderedList,
@@ -1699,7 +1707,7 @@ var toolbarBuiltInButtons = {
         name: "ordered-list",
         action: toggleOrderedList,
         className: "list-ol",
-        dataFeather: "list",
+        dataFeather: "hash",
         title: "Numbered List",
         default: true,
     },
@@ -1709,13 +1717,7 @@ var toolbarBuiltInButtons = {
         className: "code",
         dataFeather: "code",
         title: "Code",
-    },
-    "horizontal-rule": {
-        name: "horizontal-rule",
-        action: drawHorizontalRule,
-        className: "minus",
-        dataFeather: "minus",
-        title: "Insert Horizontal Line",
+        default: true,
     },
     preview: {
         name: "preview",
@@ -2637,6 +2639,7 @@ EasyMDE.prototype.clearAutosavedValue = function () {
 EasyMDE.prototype.openBrowseFileWindow = function (onSuccess, onError) {
     var self = this;
     var imageInput = this.gui.toolbar.getElementsByClassName("imageInput")[0];
+    console.log("imageInput :", imageInput.click());
     imageInput.click(); //dispatchEvent(new MouseEvent('click'));  // replaced with click() for IE11 compatibility.
     function onChange(event) {
         if (self.options.imageUploadFunction) {
